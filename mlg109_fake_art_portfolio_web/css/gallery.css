@@ -1,0 +1,272 @@
+:root {
+    --white: #dbdbdb;
+    --black: #000000;
+    --persiana: #2c2c2c;
+    --letra_clara: #dbdbdb;
+}
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+    color: var(--black);
+    font-family: 'Arial', sans-serif;
+    scroll-behavior: smooth;
+    background-color: var(--white);
+}
+
+img {
+    width: 100%;
+    vertical-align: middle;
+    
+}
+
+h1, h2, h3, p {
+    margin: 1rem 0;
+}
+/*********** 
+ ** ENCABEZADO 
+ ***********/
+.encabezado {
+    position: sticky;
+    top: 0;
+    height: 3em;
+    padding: 0 2em;
+    background-color: var(--white);
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+#titulo {
+    margin: 0;
+    font-size: 2.5em;
+    text-align: center;
+    font-family: "Zen Loop", sans-serif;
+    font-weight: bold;
+}
+#logo_min {
+    padding-left: 0;
+    padding-top: 0.5em;
+    width: 2em;
+    background-color: var(--white);
+}
+.linea_menu {
+    background-color: var(--black);
+    color: var(--white);;
+}
+/* SUBMENU. Giros de las rayas */
+#icono {
+    position: relative;
+    top: 0.2em;
+    left: 0.5em;
+    background-color: var(--white);
+}
+
+#icono > div {
+    width: 35px;
+    height: 5px;
+    background-color: var(--black);
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+#icono:hover > div {
+    cursor: pointer;
+}
+
+#icono.cambiar > div:nth-child(1) {
+    transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+#icono.cambiar > div:nth-child(2) {
+    opacity: 0;
+}
+
+#icono.cambiar > div:nth-child(3) {
+    transform: rotate(45deg) translate(-8px, -8px);
+}
+
+
+/*********** 
+ ** INDICE 
+ ***********/
+#indice {
+    background-color: var(--black);
+    display: none;
+    width: 100%;
+}
+#menu_grande {
+    position: absolute;
+    top: 0;
+    display: block;
+    background-color: var(--black);
+    width: 100%;
+    text-align: center;
+    font-size: 3em;
+}
+#menu_grande > ul {
+    padding: 0;
+}
+#menu_grande > ul > a > li {
+    list-style: none;
+    
+    width: 100%;
+    transition: 0.5s;
+    font-size: 1.7em;
+    font-family: "Zen Loop", sans-serif;
+}
+
+#menu_grande > ul > a {
+    text-decoration: none;
+    font-size: 1.1em;
+}
+
+#menu_grande > ul > a > li:hover {
+    transform: scale(1.2, 1.2);
+    font-weight: bold;
+}
+
+
+/*********** 
+ ** SECCION WORKS 
+ ***********/
+section {
+    position: relative;
+    top: 0;
+    width: 100%;
+    max-width: 1920px;
+    min-height: 100vh;
+    margin: 0%;
+    display: flex;
+    flex-direction: column;
+    padding-left: 0;   
+    padding-right: 0;      
+}
+
+section > div {
+    
+    
+    margin: 0;
+    padding-top: 1em;
+    width: 100%;
+}
+#works {
+    display: none;
+}
+
+.galeria {
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    padding-left: 3%;
+    padding-right: 3%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.galeria > figure {
+    width:  auto;
+    max-width: 270px;
+    min-width: 200px;
+    position: relative;
+    overflow: hidden;
+    transition: 0.2s;
+    padding-bottom: 1em;
+}
+
+.galeria > figure > figcaption {
+    color: var(--letra_clara);
+    width: 100%;
+    height: 98%;
+    position: absolute;
+    top: 0;
+    left: -100%;
+    background-color: rgba(44, 44, 44, 0.9); /* var(--white) */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 1.8em;
+    transition: 0.2s;
+    font-family: 'Raleway', sans-serif;
+}
+
+.galeria > figure:hover > figcaption {
+    cursor: pointer;
+    left: 0;
+}
+
+/*********** 
+ ** Ventana modal para agrandar la imagen
+ ***********/
+#modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Para que quede por encima del resto de ventanas */
+}
+
+#modal > figure {
+    width: 80%;
+    max-width: 340px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+#modal > figure > figcaption {
+    background-color: var(--black);
+    color: var(--white);;
+    width: 100%;
+    height: 3em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+}
+
+#cerrar {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0.25em;
+    font-size: 2em;
+    font-weight: bold;
+    color: var(--white);;
+    background-color: var(--black);
+    font-family: sans-serif;
+}
+
+#cerrar:hover {
+    color: var(--white);;
+    cursor: pointer;
+}
+
+/*************
+ ** Cambios y adaptaciones para resoluciones muy bajas tipo móvil
+ *************/
+@media screen and (max-width: 670px) {
+    section {
+        width: 100%;
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+    #menu_grande {
+        width: 80%;
+    }
+    .galeria > figure {
+        min-width: 100%;
+        max-width: 100%;
+        padding-right: 0;
+    }
+
+    
+}
+    

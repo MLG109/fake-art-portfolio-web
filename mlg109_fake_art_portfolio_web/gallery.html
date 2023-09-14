@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Marina López González</title>
+    <!-- Meta del juego de caracteres definido para la página -->
+    <meta charset="utf-8">
+    <!-- Meta del viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Enlace a las tipografías -->
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Zen Loop" rel="stylesheet">
+    <!-- Enlace a la galería de iconos de Font Awesome -->
+    <script src="https://kit.fontawesome.com/c3fd22b8e3.js" crossorigin="anonymous"></script>
+    <!-- Inoco de aplicación -->
+    <link rel="icon"  type="image/png" href="logoNegro.png">
+    <!-- Recursos de la aplicación -->
+    <link href="css/gallery.css" rel="stylesheet" type="text/css">
+    <script src="js/gallery.js"></script>
+</head>
+
+<!-- Utilizamos el evento onLoad para obtener el parámentro de qué galería ha seleccionado el usuario. Es importante utilizar este evento para asegurarnos que el javascript se ejecuta sólo cuando todos los elementos del body se cargaron -->
+<body onLoad="getParm()">
+    <!-- Barra de encabezado superior -->
+    <div id="id_encabezado" class="encabezado">
+        <!-- Logotipo -->
+        <div id="logo_min">
+            <a href="index.html#works"><img id="id_logo_min" src="img/logoNegro.png" alt="Logotipo"></a>
+        </div>
+        <!-- Título. Se carga a través de javascript -->
+        <h2 id="titulo"></h2>
+        <!-- Maquetación de las barras del icono de menú -->
+        <nav id="menu">
+            <div id="icono" onclick="submenu()">
+                <div id="bar1"></div>
+                <div id="bar2"></div>
+                <div id="bar3"></div>
+            </div>
+        </nav>
+    </div>
+    <!-- Índice. Opciones del menú -->
+    <section id="indice" class="stl_indice">
+        <nav id="menu_grande">
+            <ul>
+                <!-- Galería 3D -->
+                <a href="#" onclick="aplicarFiltro('tresD')"><li class="linea_menu">3D</li></a>
+                <!-- Galería Pixel Art -->
+                <a href="#" onclick="aplicarFiltro('pixArt')"><li class="linea_menu">Pixel Art</li></a>
+                <!-- Galería Concept Art -->
+                <a href="#" onclick="aplicarFiltro('concepArt')"><li class="linea_menu">Concept Art</li></a>
+                <!-- Galería Ilustrations -->
+                <a href="#" onclick="aplicarFiltro('ilus')"><li class="linea_menu">Ilustrations</li></a>
+                <!-- Volver a contactos -->
+                <a href="index.html#contacto" onclick=""><li class="linea_menu">Contact</li></a>
+            </ul>
+        </nav>
+    </section>
+    <!-- Sección Galería -->
+    <section id="works">
+        <div id="id_galeria" class="galeria">
+            <!--El contenido de imágenes está generado dinámicamente por javascript-->
+        </div>
+        <!--Ventana modal para ampliar imágenes-->
+        <div id="modal">
+            <figure>
+                <!-- La imagen en el atributo src es asignado dinámicamente por javascript -->
+                <img src="" alt="Imagen ampliada">
+                <figcaption></figcaption>
+            </figure>
+            <!-- Cerrar ventana modal -->
+            <span id="cerrar" onclick="cerrarVentana()">X</span>
+        </div>
+    </section>
+</body></html>

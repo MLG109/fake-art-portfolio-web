@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+    <title>Marina López González</title>
+    <!-- Meta del juego de caracteres definido para la página -->
+    <meta charset="utf-8">
+    <!-- Meta del viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Enlace a las tipografías -->
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Zen Loop" rel="stylesheet">
+    <!-- Inoco de aplicación -->
+    <link rel="icon"  type="image/png" href="logoNegro.png">
+    <!-- Enlace a la galería de iconos de Font Awesome -->
+    <script src="https://kit.fontawesome.com/c3fd22b8e3.js" crossorigin="anonymous"></script>
+    <!-- Recursos de la aplicación -->
+    <link href="css/index.css" rel="stylesheet" type="text/css">
+    <script src="js/index.js"></script>
+</head>
+
+<body>
+    <!-- Video inicial -->
+    <div class="wrapper">
+        <div>
+            <iframe width="766" height="431" src="https://www.youtube.com/embed/X87u7eGQNX8?controls=0&mute=1&autoplay=1&start=60" title="Ultraviolet Neon Laser Curve Glows Inside Reflective Endless Tunnel 4K 60fps Wallpaper Background" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+    </div>
+    <!-- Logo, nombre y flecha -->
+    <header>
+        <figure_logo>
+            <img src="img/logoBlanco.png"  alt="Logotipo">
+        </figure_logo>
+        <h1>Marina López González</h1>
+        
+        <div><a href="#about"><i class="fa-solid fa-arrow-down"></i></a></div>
+    </header>
+    <!-- Menú -->
+    <div class="encabezado">
+        <div class="logo_min">
+            <a href="#"><img src="img/logoBlanco.png"  alt="Logotipo"></a>
+        </div>
+        <nav id="menu">
+            <ul>
+                <li class="subrayado-dinamico">
+                    <a href="#about">About</a>
+                </li>
+                <li class="subrayado-dinamico">
+                    <a href="#works">Works</a>
+                </li>
+                <li class="subrayado-dinamico">
+                    <a href="#contacto">Contact</a>
+                </li>
+            </ul>
+        </nav>
+        
+    </div>
+    <!-- Sección about -->
+    <section id="about">
+        <p><strong>Marina López González is a digital artist specialized in 3D and illustration, also addressing fields such as pixel art focused on video games and concept art.</strong><br /><br />Graduated from the University of Design, Innovation and Technology (UDIT). Her works usually have a wide variety of styles since he considers it essential to get out of the comfort zone. Although a dark and surreal aesthetic usually predominates. Both 3D and concept art tend to have Japanese and cyberpunk influences. In contrast, the illustrations tend to convey a dreamlike sensation.</p>
+    </section>
+    <!-- Sección works -->
+    <section id="works">
+        <h2>Works</h2>
+        <p>It is essential to get out of the comfort zone.</p>
+        <!-- Los cuatro botones para ir a la galería -->
+        <div class="galeria">
+            <figure>
+                <a href="gallery.html?tipo=tresD"><img src="img/Buttons/Button_3D.jpg" alt="3D"></a>
+            </figure>
+            <figure>
+                <a href="gallery.html?tipo=pixArt"><img src="img/Buttons/Button_PixelArt.jpg" alt="Pixel Art"></a>
+            </figure>
+            <figure>
+                <a href="gallery.html?tipo=concepArt"><img src="img/Buttons/Button_ConceptArt.jpg" alt="Concept Art"></a>
+            </figure>
+            <figure>
+                <a href="gallery.html?tipo=ilus"><img src="img/Buttons/Button_Illustrations.jpg" alt="Ilustrations"></a>
+            </figure>
+        </div>
+    </section>
+    <!-- Sección contacto -->
+    <section id="contacto">
+        <h2>Contact</h2>
+        <div>
+            <div>
+                <!-- Formulario de contacto -->
+                <form id="formulario">
+                    <p>Write me your comments</p>
+                    <label for="nombre">Name:</label>
+                    <input type="text" id="nombre" placeholder="Name">
+                    <label for="correo">Email:</label>
+                    <input type="email" id="correo" placeholder="Email">
+                    <label for="phone">Mobile phone:</label>
+                    <input type="tel" id="phone" placeholder="Mobile phone" >
+                    <label for="comentarios">Comments</label>
+                    <textarea id="comentarios" placeholder="Comments"></textarea>
+                    <input type="button" value="Send" onClick="validar_enviar()">
+                </form>
+                <!-- Capa para el mensaje de confirmación -->
+                <div id="mensaje">               
+                </div>
+                <!-- Iconos de redes sociales -->
+                <ul>
+                    <li>
+                        <!-- Linkedin -->
+                        <a href="https://es.linkedin.com/" target="_blank" title="LinkedIn">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <!-- Art Station -->
+                        <a href="https://www.artstation.com/" target="_blank" title="ArtStation">
+                            <i class="fa-brands fa-artstation"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <!-- Pinterest -->
+                        <a href="https://www.pinterest.es/" target="_blank" title="Pinterest">
+                            <i class="fa-brands fa-pinterest"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <!-- Twitter -->
+                        <a href="https://twitter.com/?lang=es" target="_blank" title="Twitter">
+                            <i class="fa-brands fa-twitter"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <!-- Mapa de Google -->
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3035.819375826994!2d-3.6700696246980176!3d40.45713457143307!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd42292a2a67e76f%3A0x7661d685faad2ff8!2sESNE%20-%20Escuela%20Universitaria%20de%20Dise%C3%B1o%2C%20Innovaci%C3%B3n%20y%20Tecnolog%C3%ADa!5e0!3m2!1ses!2ses!4v1683791546704!5m2!1ses!2ses" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

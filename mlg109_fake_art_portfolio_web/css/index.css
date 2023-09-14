@@ -1,0 +1,477 @@
+/*************
+ ** Variables de colores
+ *************/
+:root {
+    --oscuro: #2c2c2c;
+    --botonFondo: #8b8b8b;
+    --redesSociales: #8e8e8e;
+    --white: #dbdbdb;
+    --black: #000000;
+    --letra_clara: #dbdbdb;
+    --letra_oscura: #2c2c2c;
+}
+
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+    color: var(--black);
+    font-family: 'Raleway', sans-serif;
+    scroll-behavior: smooth;
+
+}
+
+img {
+    width: 100%;
+    vertical-align: middle;
+}
+
+h1, h2, h3, p, header > div {
+    margin: 1rem 0;
+}
+
+/*************
+ ** Video y Página de Inicio 
+ *************/
+.wrapper {
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.wrapper > div,
+.wrapper > div > iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+@media (min-aspect-ratio: 16/9) {
+    .wrapper > div {
+        height: 300%;
+        top: -100%;
+    }
+}
+
+@media (max-aspect-ratio: 16/9) {
+    .wrapper > div {
+        width: 300%;
+        left: -100%;
+    }
+}
+
+figure_logo {
+    width: 10em;
+    margin: 0 auto;
+    position: absolute;
+    top: 6%;
+    animation-name: esne_animada;
+    animation-duration: 2s;
+    transition-property: opacity, top, filter;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in;
+}
+
+@keyframes esne_animada {
+    from {
+        opacity: 0;
+        top: -50px;
+        filter: grayscale(100%);
+    }
+
+    to {
+        opacity: 1;
+        top: 6%;
+        filter: none;
+    }
+}
+
+header {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--letra_clara);
+    background-color: rgba(44, 44, 44, 0.6); /* var(--white) */
+}
+
+header > h1 {
+    font-size: 6em;
+    color: var(--letra_clara);
+    text-align: center;
+    font-family: "Zen Loop", sans-serif;
+}
+
+header > p {
+    
+    font-size: 3vw;
+    color: var(--letra_clara);
+}
+header > div {
+    z-index: 1000;
+}
+header > div > a > i {
+    /*  Flecha en el Inicio */
+    animation: desplazar 2s;
+    font-size: 3em;
+    color: var(--white);
+}
+
+@keyframes desplazar {
+    /*  Flecha en el Inicio */
+    from {
+        transform: translateY(-2rem);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+/*************
+ ** MENU BARRA SUPERIOR
+ *************/
+.encabezado {
+    position: sticky;
+    top: 0;
+    padding: 0 2em;
+    background-color: var(--oscuro);
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    
+}
+.logo_min {
+    padding-left: 0;
+    padding-top: 0.5em;
+    width: 2em;
+}
+#menu {
+    width: 50%;
+    text-align: left;
+    
+}
+#menu > ul {
+    padding-left: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+#menu > ul > li {
+    list-style: none;
+}
+#menu > ul > li > a {
+    color: var(--letra_clara);
+    
+}
+
+
+/*************
+ ** EFECTO SUBRAYADO DE LAS OPCIONES DEL MENU 
+ *************/
+
+.subrayado-dinamico {
+    position: relative;
+    height: 3em;
+    display: flex;
+    align-items: center;
+    transition: 1s;
+}
+
+.subrayado-dinamico::after {
+    position: absolute;
+    bottom: 0.5em;
+    content: "";
+    width: 0px;
+    height: 1px;
+    display: block;
+    background: var(--letra_clara);;
+    transition: 300ms;
+}
+
+.subrayado-dinamico:hover::after {
+    width: 100%;
+}
+
+.subrayado-dinamico > a {
+    text-decoration: none;
+}
+
+/*************
+ ** Genérico de Secciones
+ *************/
+section {
+    width: 80%;
+    max-width: 1400px;
+    min-height: 100vh;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 4em;
+}
+
+section > h2 {
+    font-size: 3em;
+}
+
+/*************
+ ** SECCION ABOUT 
+ *************/
+#about {
+    width: 100%;
+    max-width: none;
+    background-color: var(--white);
+    position: relative;
+    padding-left: 6%;
+}
+
+#about > p {
+    width: 70%;
+    font-size: 1.5em;
+    background-color: var(--white);
+    opacity: 0.8;
+    padding: 0px 20px 20px 20px;
+    border-radius: 1em 1em 1em 1em;
+}
+#about::before {
+    /* before crea un pseudoelemento que es el primer elemento secundario del elemento seleccionado.
+    En este caso es para la foto de fondo del works*/ 
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(../img/MeIA.png);
+    background-position: top right;
+    background-size: contain;
+    opacity: 95%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+}
+#about > * {
+    position: relative;
+}
+
+/*************
+ ** SECCION WORKS
+ *************/
+#works {
+    width: 100%;
+    max-width: none;
+    background-color: var(--oscuro);
+    position: relative;
+    
+}
+#works > h2 {
+    width: 100%;
+    text-align: center;
+    font-family: "Zen Loop", sans-serif;
+    font-size: 6em;
+}
+#works > p{
+    width: 100%;
+    font-size: 2em;
+    background-color: var(--oscuro);
+    opacity: 0.8;
+    padding: 0% 0% 5% 0%;
+    border-radius: 1em 1em 1em 1em;
+    text-align: center;
+}
+#works > * {
+    color: var(--letra_clara);
+    position: relative;
+}
+.galeria {
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    padding-left: 10%;
+    padding-right: 10%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.galeria > figure {
+    width:  auto;
+    max-width: 220px;
+    min-width: 100px;
+    position: relative;
+    
+    padding-right: 1em;
+    padding-bottom: 1em;
+}
+
+
+.galeria > figure > a > img:hover {
+    transform: scale(1.15, 1.15);
+    cursor: pointer;
+}
+.galeria > figure > a > img {
+    transition: 0.5s;
+    border-radius: 1em 1em 1em 1em;
+}
+
+/*************
+ ** SECCION CONTACTOS
+ *************/
+#contacto > div:nth-child(2) {
+    display: flex;
+    justify-content: space-between;
+}
+#contacto > h2 {
+    font-family: "Zen Loop", sans-serif;
+    font-size: 6em;
+}
+
+#contacto > div:nth-child(2) > div {
+    width: 48%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#contacto > div:nth-child(2) > div > form,
+#contacto > div:nth-child(2) > div > ul {
+    width: 100%;
+}
+
+#contacto > div:nth-child(2) > div > form > input,
+#contacto > div:nth-child(2) > div > form > textarea {
+    /* Todos los campos del formulario */
+    display: block;
+    width: 100%;
+    height: 2em;
+    margin: 1em 0;
+    border: var(--oscuro) 1px solid;
+}
+
+#contacto > div:nth-child(2) > div > form > textarea {
+    /* Comentarios */
+    height: 6em;
+    resize: none;
+}
+#contacto > div:nth-child(2) > div > div {
+    /* Mensaje */
+    display: none;
+    text-align: center;
+    font-size: 1.2em;
+}
+/* Botón de enviar. Se pone un button en lugar de input type button para poder ejemplarizar el mensaje que muestra después de enviar.
+Con el input, me recarga la página y es un efecto que no deseo*/
+#contacto > div:nth-child(2) > div > form > input[type="button"] {
+    color: var(--letra_clara);
+    background-color: var(--oscuro);
+    border: none;
+    width: 5em;
+    margin: 1em auto;
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+
+#contacto > div:nth-child(2) > div > form > input[type="button"]:hover {
+    color: var(--letra_clara);
+    background-color: var(--botonFondo);
+}
+
+/*En el fomulario ocultamos las etiquetas para que el diseño quede más limpio*/
+#contacto > div:nth-child(2) > div > form > label {
+    display: none;
+}
+
+/* Iconos de las redes sociales. Son una lista de enlaces de navegación*/
+#contacto > div:nth-child(2) > div > ul {
+    padding-left: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+#contacto > div:nth-child(2) > div > ul > li {
+    list-style: none;
+}
+
+#contacto > div:nth-child(2) > div > ul > li > a > i {
+    font-size: 2em;
+    color: var(--redesSociales);;
+    transition: 0.2s;
+}
+
+#contacto > div:nth-child(2) > div > ul > li > a > i:hover {
+    transform: scale(1.4, 1.4);
+}
+
+/* Mapa de Google Maps. Tenemos que quitar en el elemento iframe del HTML todo lo relacionado con los estilos para que no haya conflictos*/
+#contacto > div:nth-child(2) > div > iframe {
+    width: 100%;
+    min-height: 400px;
+    border: 0;
+    filter: grayscale(70%);
+}
+
+/*************
+ ** Cambios y adaptaciones para resoluciones muy bajas tipo móvil
+ *************/
+@media screen and (max-width: 600px) {
+    #menu {
+        width: 70%;
+    }
+    #menu > ul > li {
+        font-size: 1.2em;
+    }
+    #about {
+        padding: 0;
+        padding-left: 2%;
+        padding-right: 2%;
+    }
+    #about > p {
+        width: 100%;
+        font-size: 1.43em;
+    }
+    
+    #works {
+        padding-left: 0%;
+    }
+    .galeria {
+        width:  100%;
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+
+    .galeria > figure {
+        max-width: 150px;
+        min-width: 100px;
+        
+        
+    }
+    .galeria > figure > a > img {
+        min-width: 100px;
+    }
+
+    #contacto > div:nth-child(2) > div > form > input,
+    #contacto > div:nth-child(2) > div > form > textarea,
+    #contacto > div:nth-child(2) > div > form > p {
+        font-size: 1.2em;
+    }
+    #contacto > div:nth-child(2) {
+        display: inline;
+    }
+    #contacto > div:nth-child(2) > div,
+    #contacto > div:nth-child(2) > div > iframe {
+        width: 100%;
+    }
+    #contacto > div:nth-child(2) > div > iframe {
+        padding-top: 2em;
+    }
+}
+    
